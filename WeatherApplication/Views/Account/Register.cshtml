@@ -1,0 +1,82 @@
+﻿@model WeatherApplication.Models.RegisterViewModel
+
+@{
+    Layout = null;
+}
+<head>
+    
+    <link rel="stylesheet" href="~/css/Register.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<section >
+    <form method="post">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card card-registration my-4" style="background: #eee;">
+                    <div class="row g-0">
+                        <div class="col-xl-6 d-none d-xl-block">
+                                <img src="~/images/Rainbow.png"
+                                 alt="Sample photo" class="img-fluid"
+                                 style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card-body p-md-5 text-black">
+                                <h3 class="mb-5 text-uppercase">Register</h3>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input type="text" asp-for="FirstName" id="form3Example1m" class="form-control form-control-lg" required/>
+                                            <label class="form-label" for="form3Example1m">First name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input type="text" asp-for="LastName"  id="form3Example1n" class="form-control form-control-lg" required />
+                                            <label class="form-label" for="form3Example1n">Last name</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input type="password" asp-for="Password" id="form3Example1m1" class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Example1m1">Password</label>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input type="password" asp-for="ConfirmPassword"  id="form3Example1n1" class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Example1n1">Confirm Password</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                               
+
+                                <div class="form-outline mb-4">
+                                    <input type="email" id="form3Example97" asp-for="Email" class="form-control form-control-lg" />
+                                    <label class="form-label" for="form3Example97">Email</label>
+                                </div>
+
+                                <div class="d-flex justify-content-end pt-3">
+                                  
+                                    <button  type="submit" class="btn btn-warning btn-lg ms-2" style="background: #707A7D;color: white;border-color: white;">
+                                        Register
+                                    </button>
+                                </div>
+                                    <span asp-validation-for="Password" class="text-warning"></span>
+                                    <span asp-validation-for="ConfirmPassword" class="text-warning"></span>
+                                @ViewBag.Message
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</section>
