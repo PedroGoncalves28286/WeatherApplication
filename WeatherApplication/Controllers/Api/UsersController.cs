@@ -6,18 +6,20 @@ namespace WeatherApplication.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserApiController : Controller
+    public class UsersController : Controller
     {
-        private DataContext _dataContext;
-        public UserApiController(DataContext dataContext)
+        private readonly DataContext _context;
+
+        public UsersController(DataContext context)
         {
-            _dataContext = dataContext;
+            _context = context;
         }
 
         [HttpGet]
         public IActionResult GetUsers()
         {
-            return Ok(_dataContext.Users.ToList());
+            return Ok(_context.Users.ToList());
         }
+
     }
 }

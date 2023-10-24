@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:i18n="clr-namespace:WeatherApplication.Prism.Helpers"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="WeatherApplication.Prism.Views.CitiesPage"
+             Title="{Binding Title}"
+             BackgroundColor="#1b2f45">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <SearchBar Grid.Row="0" TextColor="Black" PlaceholderColor="Black" Placeholder="{i18n:Translate SearchCity}" SearchCommand="{Binding SearchCommand}" Text="{Binding Search}" Margin="10" BackgroundColor="White" />
+
+        <!-- Content -->
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Cities}" BackgroundColor="White">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <!-- Your item template here -->
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Busy Indicator -->
+        <busyindicator:SfBusyIndicator Grid.Row="2" Title="{i18n:Translate Loading}" AnimationType="Gear" BackgroundColor="#1b2f45" HorizontalOptions="Center" IsBusy="{Binding IsRunning}" TextColor="White" VerticalOptions="CenterAndExpand" ViewBoxHeight="80" ViewBoxWidth="80" />
+    </Grid>
+</ContentPage>

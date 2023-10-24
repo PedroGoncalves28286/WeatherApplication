@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             x:Class="WeatherApplication.Prism.App">
+    <application.resources>
+
+         <!--application resource dictionary 
+        <resourcedictionary>
+            <x:string x:key="urlapi">api.openweathermap.org</x:string>
+        </resourcedictionary>-->
+
+    </application.resources>
+</prism:PrismApplication>

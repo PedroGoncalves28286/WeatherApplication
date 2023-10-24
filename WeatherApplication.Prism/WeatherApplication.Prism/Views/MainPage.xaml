@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherApplication.Prism.Views.MainPage"
+             Title="{Binding Title}">
+
+    <StackLayout BackgroundColor="#1b2f45">
+        <Label Text="Welcome to Xamarin Forms and Prism!" 
+               TextColor="White" 
+               FontSize="24" 
+               HorizontalOptions="CenterAndExpand" 
+               VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+
+</ContentPage>

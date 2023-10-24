@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="WeatherApplication.Prism.Views.RegisterPage">
+
+    <StackLayout BackgroundColor="#1b2f45" VerticalOptions="FillAndExpand" Padding="20">
+
+        <Image Source="background_image.jpg" Aspect="AspectFill" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <Image Source="logo.png" WidthRequest="100" HeightRequest="70" HorizontalOptions="CenterAndExpand" />
+
+        <Frame BackgroundColor="#1b2f45" HasShadow="True" Padding="20" CornerRadius="10">
+            <StackLayout Spacing="15">
+
+                <Label Text="REGISTER" TextColor="White" HorizontalOptions="CenterAndExpand" FontSize="24" FontAttributes="Bold" />
+
+                <Entry Placeholder="First Name" PlaceholderColor="White" Text="{Binding FirstName}" TextColor="White" BackgroundColor="Transparent" />
+                <Entry Placeholder="Last Name" PlaceholderColor="White" Text="{Binding LastName}" TextColor="White" BackgroundColor="Transparent" />
+                <Entry Placeholder="Email" PlaceholderColor="White" Text="{Binding Email}" TextColor="White" BackgroundColor="Transparent" />
+                <Entry Placeholder="Password" PlaceholderColor="White" IsPassword="True" Text="{Binding Password}" TextColor="White" BackgroundColor="Transparent" />
+                <Entry Placeholder="Confirm Password" PlaceholderColor="White" IsPassword="True" Text="{Binding Confirm}" TextColor="White" BackgroundColor="Transparent" />
+
+                <Button Text="Register" Command="{Binding RegisterCommand}" BackgroundColor="#ea6d4a" TextColor="White" CornerRadius="30" FontSize="18" FontAttributes="Bold" />
+
+                <Label HorizontalOptions="Center" TextColor="White">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="You've already registered? " />
+                            <Span Text="Login" TextColor="#ea6d4a" TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding LoginCommand}" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

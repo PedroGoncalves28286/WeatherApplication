@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="WeatherApplication.Prism.Views.LoginPage">
+
+    <StackLayout BackgroundColor="#1b2f45" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20">
+            <Image Source="logo.png" WidthRequest="100" HeightRequest="50" HorizontalOptions="Center" />
+
+            <Frame BackgroundColor="Transparent" HasShadow="True" Padding="0" CornerRadius="30" HorizontalOptions="FillAndExpand" HeightRequest="300">
+                <StackLayout Padding="15,10">
+                    <Entry Text="{Binding Email}" Placeholder="Email" PlaceholderColor="White" TextColor="White" FontAttributes="None" Margin="0,0,0,10" BackgroundColor="Transparent" />
+
+                    <Entry Text="{Binding Password}" PlaceholderColor="White" Placeholder="Password" IsPassword="True" TextColor="White" FontAttributes="None" BackgroundColor="Transparent" />
+
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <CheckBox IsChecked="False" Color="White" VerticalOptions="Center" />
+                        <Label Text="Remember me" TextColor="White" FontSize="Small" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+
+                        <Button Text="CREATE ACCOUNT" Command="{Binding DontHaveAnAccountCommand}" TextColor="#ea6d4a" BackgroundColor="Transparent" FontAttributes="Bold" FontSize="Small" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+                    </StackLayout>
+
+                    <Button Text="LOG IN" Command="{Binding LoginCommand}" BackgroundColor="#ea6d4a" TextColor="White" CornerRadius="30" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="WeatherApplication.Prism.Views.RegisterConfirmationPage">
+
+    <StackLayout BackgroundColor="#1b2f45" VerticalOptions="FillAndExpand">
+        <Image Source="logo" HeightRequest="160" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="0,50,0,0" />
+
+        <Label Text="Confirm your email to enter the app."
+               TextColor="White"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+
+        <Label Text="Thank you for choosing us."
+               TextColor="White"
+               FontSize="Medium"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+
+        <Button Text="Go to Login"
+                BackgroundColor="#ea6d4a"
+                TextColor="White"
+                CornerRadius="10"
+                HorizontalOptions="FillAndExpand"
+                Command="{Binding GoToLoginCommand}"
+                VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+</ContentPage>
