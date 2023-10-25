@@ -61,7 +61,7 @@ namespace WeatherApplication.Prism.ViewModels
                 return;
             }
 
-            string url = "https://openweather25853.azurewebsites.net/";
+            string url = "https://weatherapplication28286.azurewebsites.net/";
 
             string email = Email;
 

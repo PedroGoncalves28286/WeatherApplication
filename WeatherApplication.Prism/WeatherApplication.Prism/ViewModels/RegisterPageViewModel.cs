@@ -118,7 +118,8 @@ namespace WeatherApplication.Prism.ViewModels
 
             var client = new HttpClient();
 
-            var response = await client.PostAsync("https://WeatherApplication28286.azurewebsites.net/api/Users/", httpContent);
+            var response = await client.PostAsync("https://weatherapplication28286.azurewebsites.net/", httpContent);
+       
 
             if (response != null)
             {

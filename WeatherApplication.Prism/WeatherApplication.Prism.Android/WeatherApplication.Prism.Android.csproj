@@ -220,7 +220,7 @@
     <AndroidResource Include="Resources\drawable\overlay.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\New York.jpeg" />
+    <AndroidResource Include="Resources\drawable\NewYork.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Spain.jpeg" />
