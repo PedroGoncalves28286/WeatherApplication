@@ -5,26 +5,47 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="WeatherApplication.Prism.Views.LoginPage">
 
-    <StackLayout BackgroundColor="#1b2f45" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20">
-            <Image Source="logo.png" WidthRequest="100" HeightRequest="50" HorizontalOptions="Center" />
+    <Grid BackgroundColor="#1b2f45">
+        <StackLayout Orientation="Horizontal"
+             HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+            <Frame BackgroundColor="Transparent" HeightRequest="300" HasShadow="True" Padding="0" Margin="20,0,20,20">
+                <StackLayout>
+                    <StackLayout Padding="0" Margin="15,10">
+                        <Image Source="logo.png" WidthRequest="100" HeightRequest="50"></Image>
 
-            <Frame BackgroundColor="Transparent" HasShadow="True" Padding="0" CornerRadius="30" HorizontalOptions="FillAndExpand" HeightRequest="300">
-                <StackLayout Padding="15,10">
-                    <Entry Text="{Binding Email}" Placeholder="Email" PlaceholderColor="White" TextColor="White" FontAttributes="None" Margin="0,0,0,10" BackgroundColor="Transparent" />
+                        <Frame BorderColor="White" BackgroundColor="Transparent" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                            <StackLayout Orientation="Horizontal">
+                                <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                    <Image Source="ic_user" Aspect="AspectFill" Margin="0"/>
+                                </Frame>
 
-                    <Entry Text="{Binding Password}" PlaceholderColor="White" Placeholder="Password" IsPassword="True" TextColor="White" FontAttributes="None" BackgroundColor="Transparent" />
+                                <Entry Text="{Binding Email}" Placeholder="Email" PlaceholderColor="White" TextColor="White" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                            </StackLayout>
+                        </Frame>
 
-                    <StackLayout Orientation="Horizontal" Spacing="10">
-                        <CheckBox IsChecked="False" Color="White" VerticalOptions="Center" />
-                        <Label Text="Remember me" TextColor="White" FontSize="Small" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                        <Frame BackgroundColor="Transparent" BorderColor="White" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                            <StackLayout Orientation="Horizontal">
+                                <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                    <Image Source="ic_key" Aspect="AspectFill" Margin="0"/>
+                                </Frame>
 
-                        <Button Text="CREATE ACCOUNT" Command="{Binding DontHaveAnAccountCommand}" TextColor="#ea6d4a" BackgroundColor="Transparent" FontAttributes="Bold" FontSize="Small" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+                                <Entry Text="{Binding Password}" PlaceholderColor="White" Placeholder="Password" IsPassword="True" TextColor="White" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <StackLayout  Orientation="Horizontal">
+                            <CheckBox IsChecked="False" Color="White" />
+                            <Label Text="Remember me" TextColor="White" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+                            <Button Text="CREATE ACCOUNT" Command="{Binding DontHaveAnAccountCommand}" TextColor="#ea6d4a" BackgroundColor="Transparent" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" />
+
+                        </StackLayout>
+                        <StackLayout  Orientation="Horizontal" >
+                            <Button Text="LOG IN" Command="{Binding LoginCommand}" BackgroundColor="#ea6d4a" TextColor="White" CornerRadius="30" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
                     </StackLayout>
-
-                    <Button Text="LOG IN" Command="{Binding LoginCommand}" BackgroundColor="#ea6d4a" TextColor="White" CornerRadius="30" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
                 </StackLayout>
             </Frame>
         </StackLayout>
-    </StackLayout>
+    </Grid>
 </ContentPage>

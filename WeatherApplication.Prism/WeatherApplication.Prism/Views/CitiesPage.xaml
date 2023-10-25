@@ -2,37 +2,75 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
-             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
-             xmlns:i18n="clr-namespace:WeatherApplication.Prism.Helpers"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+                   xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:i18n="clr-namespace:WeatherApplication.Prism.Helpers" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="WeatherApplication.Prism.Views.CitiesPage"
              Title="{Binding Title}"
              BackgroundColor="#1b2f45">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+    <AbsoluteLayout>
+        <StackLayout BackgroundColor="White" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Padding="5">
+            <SearchBar TextColor="Black" PlaceholderColor="Black" Placeholder="{i18n:Translate SearchCity}" SearchCommand="{Binding SearchCommand}" Text="{Binding Search}"></SearchBar>
+            <CollectionView ItemsSource="{Binding Cities}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="#1b2f45" BackgroundColor="White" Padding="9.7" HorizontalOptions="FillAndExpand" CornerRadius="14">
+                            <Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SelectCityCommand}"/>
+                                </Grid.GestureRecognizers>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="120"/>
+                                </Grid.RowDefinitions>
+                                <ffimageloading:CachedImage
+                                Grid.Column="0"
+                                Margin="5"
+                                Aspect="AspectFit"
+                                CacheDuration="50"
+                                RetryCount="3"
+                                RetryDelay="600"
+                                Source="{Binding Image}"
+                                WidthRequest="80"/>
+                                <Label Grid.Column="0" Text="{Binding WeatherText}" VerticalOptions="End" HorizontalOptions="Center"></Label>
+                                <StackLayout Grid.Column="1" VerticalOptions="CenterAndExpand">
+                                    <Label
+                                    FontAttributes="Bold"
+                                    FontSize="Medium"
+                                    LineBreakMode="TailTruncation"
+                                    Text="{Binding EnglishName}"  VerticalOptions="StartAndExpand"/>
+                                    <Label
+                                    FontAttributes="Italic"
+                                    Text="{Binding Country.EnglishName}"
+                                    VerticalOptions="EndAndExpand"/>
+                                </StackLayout>
+                                <Image Grid.Column="2" Source="ic_more_vert" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+        <busyindicator:SfBusyIndicator
+            Title="{i18n:Translate Loading}"
+            AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
+            AbsoluteLayout.LayoutFlags="All"
+            AnimationType="Gear"
+            BackgroundColor="#1b2f45"
+            HorizontalOptions="Center"
+            IsBusy="{Binding IsRunning}"
+            TextColor="White"
+            VerticalOptions="Center"
+            ViewBoxHeight="80"
+            ViewBoxWidth="80" />
+    </AbsoluteLayout>
 
-        <!-- Header -->
-        <SearchBar Grid.Row="0" TextColor="Black" PlaceholderColor="Black" Placeholder="{i18n:Translate SearchCity}" SearchCommand="{Binding SearchCommand}" Text="{Binding Search}" Margin="10" BackgroundColor="White" />
-
-        <!-- Content -->
-        <CollectionView Grid.Row="1" ItemsSource="{Binding Cities}" BackgroundColor="White">
-            <CollectionView.ItemsLayout>
-                <GridItemsLayout Orientation="Vertical" />
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <!-- Your item template here -->
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-
-        <!-- Busy Indicator -->
-        <busyindicator:SfBusyIndicator Grid.Row="2" Title="{i18n:Translate Loading}" AnimationType="Gear" BackgroundColor="#1b2f45" HorizontalOptions="Center" IsBusy="{Binding IsRunning}" TextColor="White" VerticalOptions="CenterAndExpand" ViewBoxHeight="80" ViewBoxWidth="80" />
-    </Grid>
 </ContentPage>

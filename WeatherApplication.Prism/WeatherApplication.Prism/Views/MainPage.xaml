@@ -4,12 +4,8 @@
              x:Class="WeatherApplication.Prism.Views.MainPage"
              Title="{Binding Title}">
 
-    <StackLayout BackgroundColor="#1b2f45">
-        <Label Text="Welcome to Xamarin Forms and Prism!" 
-               TextColor="White" 
-               FontSize="24" 
-               HorizontalOptions="CenterAndExpand" 
-               VerticalOptions="CenterAndExpand" />
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="Welcome to Xamarin Forms and Prism!" />
     </StackLayout>
 
 </ContentPage>

@@ -5,38 +5,68 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="WeatherApplication.Prism.Views.RegisterPage">
 
-    <StackLayout BackgroundColor="#1b2f45" VerticalOptions="FillAndExpand" Padding="20">
+    <Grid  BackgroundColor="#1b2f45">
+        <StackLayout Orientation="Vertical" VerticalOptions="Center"
+             Spacing="10" 
+             HorizontalOptions="Fill">
+            <Image Source="logo.png" WidthRequest="100" HeightRequest="70" Margin="15"></Image>
+            <Frame   BackgroundColor="#1b2f45"  HasShadow="True" Padding="0" Margin="20,0,20,40">
+                <StackLayout>
+                    <StackLayout Margin="10">
+                        <Label Text="REGISTER" TextColor="White" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                    </StackLayout>
 
-        <Image Source="background_image.jpg" Aspect="AspectFill" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="Center" />
+                    <StackLayout Padding="0" Margin="15,10">
 
-        <Image Source="logo.png" WidthRequest="100" HeightRequest="70" HorizontalOptions="CenterAndExpand" />
+                        <Frame BackgroundColor="Transparent" BorderColor="White" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                            <StackLayout Orientation="Horizontal">
+                                <Entry PlaceholderColor="White" Placeholder="First Name" Text="{Binding FirstName}" TextColor="White" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
+                            </StackLayout>
+                        </Frame>
 
-        <Frame BackgroundColor="#1b2f45" HasShadow="True" Padding="20" CornerRadius="10">
-            <StackLayout Spacing="15">
+                        <Frame BackgroundColor="Transparent" BorderColor="White" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                            <StackLayout Orientation="Horizontal">
+                                <Entry PlaceholderColor="White" Placeholder="Last Name" Text="{Binding LastName}" TextColor="White" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
+                            </StackLayout>
+                        </Frame>
 
-                <Label Text="REGISTER" TextColor="White" HorizontalOptions="CenterAndExpand" FontSize="24" FontAttributes="Bold" />
+                        <Frame BackgroundColor="Transparent" BorderColor="White" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                            <StackLayout Orientation="Horizontal">
+                                <Entry PlaceholderColor="White" Placeholder="Email" Text="{Binding Email}" TextColor="White" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
+                            </StackLayout>
+                        </Frame>
 
-                <Entry Placeholder="First Name" PlaceholderColor="White" Text="{Binding FirstName}" TextColor="White" BackgroundColor="Transparent" />
-                <Entry Placeholder="Last Name" PlaceholderColor="White" Text="{Binding LastName}" TextColor="White" BackgroundColor="Transparent" />
-                <Entry Placeholder="Email" PlaceholderColor="White" Text="{Binding Email}" TextColor="White" BackgroundColor="Transparent" />
-                <Entry Placeholder="Password" PlaceholderColor="White" IsPassword="True" Text="{Binding Password}" TextColor="White" BackgroundColor="Transparent" />
-                <Entry Placeholder="Confirm Password" PlaceholderColor="White" IsPassword="True" Text="{Binding Confirm}" TextColor="White" BackgroundColor="Transparent" />
+                        <Frame BackgroundColor="Transparent" BorderColor="White" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                            <StackLayout Orientation="Horizontal">
+                                <Entry PlaceholderColor="White" Placeholder="Password" IsPassword="True" Text="{Binding Password}" TextColor="White" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
+                            </StackLayout>
+                        </Frame>
 
-                <Button Text="Register" Command="{Binding RegisterCommand}" BackgroundColor="#ea6d4a" TextColor="White" CornerRadius="30" FontSize="18" FontAttributes="Bold" />
-
-                <Label HorizontalOptions="Center" TextColor="White">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="You've already registered? " />
-                            <Span Text="Login" TextColor="#ea6d4a" TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding LoginCommand}" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-            </StackLayout>
-        </Frame>
-    </StackLayout>
+                        <Frame BackgroundColor="Transparent" BorderColor="White" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                            <StackLayout Orientation="Horizontal">
+                                <Entry PlaceholderColor="White" Placeholder="Confirm Password" IsPassword="True" Text="{Binding Confirm}" TextColor="White" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
+                            </StackLayout>
+                        </Frame>
+                        <StackLayout  Orientation="Horizontal" Margin="0,15,0,15">
+                            <Button Text="Register" Command="{Binding RegisterCommand}" BackgroundColor="#ea6d4a" TextColor="White" CornerRadius="30" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span TextColor="White" Text="You've already registered? " />
+                        <Span Text="Login"
+                  TextColor="#ea6d4a"
+                  TextDecorations="Underline">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding LoginCommand}"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </Grid>
 </ContentPage>

@@ -5,27 +5,23 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="WeatherApplication.Prism.Views.RegisterConfirmationPage">
 
-    <StackLayout BackgroundColor="#1b2f45" VerticalOptions="FillAndExpand">
-        <Image Source="logo" HeightRequest="160" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="0,50,0,0" />
-
-        <Label Text="Confirm your email to enter the app."
-               TextColor="White"
-               FontSize="Large"
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
-
-        <Label Text="Thank you for choosing us."
-               TextColor="White"
-               FontSize="Medium"
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
-
-        <Button Text="Go to Login"
-                BackgroundColor="#ea6d4a"
-                TextColor="White"
-                CornerRadius="10"
-                HorizontalOptions="FillAndExpand"
-                Command="{Binding GoToLoginCommand}"
-                VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <Grid BackgroundColor="#1b2f45">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" VerticalOptions="StartAndExpand" Margin="5">
+            <Image HeightRequest="160"  Margin="50" Source="logo" HorizontalOptions="Center" VerticalOptions="Center" />
+        </Grid>
+        <Grid Grid.Row="1" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+            <Label FontSize="Large" TextColor="White"  Text="Confirm your email to enter in the app."></Label>
+        </Grid>
+        <Grid Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center">
+            <Label FontSize="Medium" TextColor="White"  Text="Thank you for choosing us."></Label>
+        </Grid>
+        <Grid Grid.Row="3" VerticalOptions="Center" HorizontalOptions="Center">
+            <Button Command="{Binding GoToLoginCommand}" BackgroundColor="#ea6d4a" TextColor="White" CornerRadius="10" HorizontalOptions="FillAndExpand" Text="Go to Login"></Button>
+        </Grid>
+    </Grid>
 </ContentPage>

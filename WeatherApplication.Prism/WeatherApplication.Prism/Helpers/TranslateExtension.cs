@@ -12,7 +12,7 @@ namespace WeatherApplication.Prism.Helpers
     public class TranslateExtension : IMarkupExtension
     {
         private readonly CultureInfo ci;
-        private const string ResourceId = "WeatherApplication.Prism.Resources.Resourc";
+        private const string ResourceId = "WeatherApplication.Prism.Resources.Resource";
         private static readonly Lazy<ResourceManager> ResMgr =
             new Lazy<ResourceManager>(() => new ResourceManager(
                 ResourceId,
