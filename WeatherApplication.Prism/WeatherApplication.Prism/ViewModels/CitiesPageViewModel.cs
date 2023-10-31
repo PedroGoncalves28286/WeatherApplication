@@ -293,7 +293,7 @@ namespace WeatherApplication.Prism.ViewModels
 
             string url = "http://dataservice.accuweather.com";
 
-            Response response = await _apiService.GetListAsync<CityResponse>(url, "/currentconditions/v1/topcities", "/150?apikey=bKQSz8cgEfC4qNee1kZfcGmsPSGd0urw");
+            Response response = await _apiService.GetListAsync<CityResponse>(url, "/currentconditions/v1/topcities", "/150?apikey=mF7AGWCbPcUox84vNLKhtdwIsOLwITQ7");
 
             IsRunning = false;
 
