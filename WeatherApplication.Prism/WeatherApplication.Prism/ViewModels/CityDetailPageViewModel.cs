@@ -62,9 +62,9 @@ namespace WeatherApplication.Prism.ViewModels
                 return;
             }
 
-            string url = "api.openweathermap.org";
+            string url = "https://dataservice.accuweather.com/";
 
-            Response response = await _apiService.GetListAsync<DaysResponse>(url, "/data/2.5/weather?q=", Title + "&appid=d855e113c60c0a9fd312d94332aa6d85");
+            Response response = await _apiService.GetListAsync<DaysResponse>(url, "/data/2.5/weather?q=", Title + "&appid=mF7AGWCbPcUox84vNLKhtdwIsOLwITQ7");
 
 
             if (!response.IsSuccess)
